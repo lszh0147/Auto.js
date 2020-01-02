@@ -6,7 +6,7 @@ import org.autojs.autojs.network.entity.notification.Notification;
 import org.autojs.autojs.network.entity.notification.NotificationResponse;
 import org.autojs.autojs.network.entity.user.User;
 import com.stardust.util.Objects;
-import com.tencent.bugly.crashreport.CrashReport;
+//import com.tencent.bugly.crashreport.CrashReport;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -79,7 +79,7 @@ public class UserService {
         User old = mUser;
         mUser = user;
         if(mUser != null){
-            CrashReport.setUserId(mUser.getUid());
+//            CrashReport.setUserId(mUser.getUid());
         }
         if (!Objects.equals(old, mUser)) {
             if (user == null) {

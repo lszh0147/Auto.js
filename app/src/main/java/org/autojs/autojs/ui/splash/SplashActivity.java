@@ -19,18 +19,19 @@ public class SplashActivity extends BaseActivity {
 
     private boolean mAlreadyEnterNextActivity = false;
     private boolean mPaused;
-    private Handler mHandler;
+//    private Handler mHandler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
-        mHandler.postDelayed(SplashActivity.this::enterNextActivity, INIT_TIMEOUT);
+//        mHandler.postDelayed(SplashActivity.this::enterNextActivity, INIT_TIMEOUT);
+        enterNextActivity();
     }
 
     private void init() {
         setContentView(R.layout.activity_splash);
-        mHandler = new Handler();
+//        mHandler = new Handler();
     }
 
     @Override

@@ -13,6 +13,9 @@
         <item name="android:divider">@color/divider</item>
         <item name="drawer_item_text_color">@color/drawer_menu_item_text_color</item>
         <item name="drawer_group_text_color">@color/drawer_menu_group_text_color</item>
+        <item name="android:windowDisablePreview">true</item>
+
+
     </style>
 
     <style name="ToolBarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -29,6 +32,14 @@
     <style name="AppTheme.FullScreen" parent="AppTheme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
     </style>
 
     <style name="AppTheme.Splash" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">

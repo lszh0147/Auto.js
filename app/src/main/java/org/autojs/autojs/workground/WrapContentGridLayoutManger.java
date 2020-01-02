@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 
-import com.tencent.bugly.crashreport.BuglyLog;
+//import com.tencent.bugly.crashreport.BuglyLog;
 
 public class WrapContentGridLayoutManger extends GridLayoutManager {
 
@@ -32,7 +32,7 @@ public class WrapContentGridLayoutManger extends GridLayoutManager {
         try {
             super.onLayoutChildren(recycler, state);
         } catch (IndexOutOfBoundsException e) {
-            BuglyLog.e("GridLayoutManager", "Android bug: debug info = " + mDebugInfo, e);
+//            BuglyLog.e("GridLayoutManager", "Android bug: debug info = " + mDebugInfo, e);
         }
     }
 }

@@ -39,7 +39,7 @@ android {
             reset()
 
             // Specifies a list of ABIs that Gradle should create APKs for.
-            include "x86", "armeabi-v7a"
+            include "armeabi-v7a"
 
             // Specifies that we do not want to also generate a universal APK that includes all ABIs.
             universalApk false
@@ -87,7 +87,7 @@ task buildApkPlugin {
             return
         }
         buildApkPluginForAbi(pluginProjectDir, 'armeabi-v7a')
-        buildApkPluginForAbi(pluginProjectDir, 'x86')
+//        buildApkPluginForAbi(pluginProjectDir, 'x86')
     }
 }
 
