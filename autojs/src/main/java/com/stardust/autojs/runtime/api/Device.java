@@ -42,25 +42,25 @@ public class Device {
 
     public static final int height = ScreenMetrics.getDeviceScreenHeight();
 
-    public static final String buildId = Build.ID;
+    public static final String buildId = Build.UNKNOWN;
 
-    public static final String buildDisplay = Build.DISPLAY;
+    public static final String buildDisplay = Build.UNKNOWN;
 
-    public static final String product = Build.PRODUCT;
+    public static final String product = Build.UNKNOWN;
 
-    public static final String board = Build.BOARD;
+    public static final String board = Build.UNKNOWN;
 
-    public static final String brand = Build.BRAND;
+    public static final String brand = Build.UNKNOWN;
 
-    public static final String device = Build.DEVICE;
+    public static final String device = Build.UNKNOWN;
 
-    public static final String model = Build.MODEL;
+    public static final String model = Build.UNKNOWN;
 
-    public static final String bootloader = Build.BOOTLOADER;
+    public static final String bootloader = Build.UNKNOWN;
 
-    public static final String hardware = Build.HARDWARE;
+    public static final String hardware = Build.UNKNOWN;
 
-    public static final String fingerprint = Build.FINGERPRINT;
+    public static final String fingerprint = Build.UNKNOWN;
 
     public static final int sdkInt = Build.VERSION.SDK_INT;
 
@@ -85,7 +85,7 @@ public class Device {
     public static final String codename = Build.VERSION.CODENAME;
 
     @SuppressLint("HardwareIds")
-    public static final String serial = Build.SERIAL;
+    public static final String serial = Build.UNKNOWN;
 
     private Context mContext;
     private PowerManager.WakeLock mWakeLock;
@@ -98,18 +98,20 @@ public class Device {
     @SuppressLint("HardwareIds")
     @Nullable
     public String getIMEI() {
-        checkReadPhoneStatePermission();
-        try {
-            return ((TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
-        } catch (SecurityException e) {
-            return null;
-        }
+//        checkReadPhoneStatePermission();
+//        try {
+//            return ((TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+//        } catch (SecurityException e) {
+//            return null;
+//        }
+        return "000000000000000";
     }
 
 
     @SuppressLint("HardwareIds")
     public String getAndroidId() {
-        return Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID);
+//        return Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID);
+        return "000000000000000";
     }
 
     public int getBrightness() throws Settings.SettingNotFoundException {
@@ -314,57 +316,60 @@ public class Device {
 
     @SuppressLint("HardwareIds")
     public String getMacAddress() throws Exception {
-        WifiManager wifiMan = (WifiManager) mContext.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        if (wifiMan == null) {
-            return null;
-        }
-        WifiInfo wifiInf = wifiMan.getConnectionInfo();
-        if (wifiInf == null) {
-            return getMacByFile();
-        }
-
-        String mac = wifiInf.getMacAddress();
-        if (FAKE_MAC_ADDRESS.equals(mac)) {
-            mac = null;
-        }
-        if (mac == null) {
-            mac = getMacByInterface();
-            if (mac == null) {
-                mac = getMacByFile();
-            }
-        }
-        return mac;
+//        WifiManager wifiMan = (WifiManager) mContext.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+//        if (wifiMan == null) {
+//            return null;
+//        }
+//        WifiInfo wifiInf = wifiMan.getConnectionInfo();
+//        if (wifiInf == null) {
+//            return getMacByFile();
+//        }
+//
+//        String mac = wifiInf.getMacAddress();
+//        if (FAKE_MAC_ADDRESS.equals(mac)) {
+//            mac = null;
+//        }
+//        if (mac == null) {
+//            mac = getMacByInterface();
+//            if (mac == null) {
+//                mac = getMacByFile();
+//            }
+//        }
+//        return mac;
+        return "02:00:00:00:00:00";
     }
 
     private static String getMacByInterface() throws SocketException {
-        List<NetworkInterface> networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
-        for (NetworkInterface networkInterface : networkInterfaces) {
-            if (networkInterface.getName().equalsIgnoreCase("wlan0")) {
-                byte[] macBytes = networkInterface.getHardwareAddress();
-                if (macBytes == null) {
-                    return null;
-                }
-
-                StringBuilder mac = new StringBuilder();
-                for (byte b : macBytes) {
-                    mac.append(String.format("%02X:", b));
-                }
-
-                if (mac.length() > 0) {
-                    mac.deleteCharAt(mac.length() - 1);
-                }
-                return mac.toString();
-            }
-        }
-        return null;
+//        List<NetworkInterface> networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+//        for (NetworkInterface networkInterface : networkInterfaces) {
+//            if (networkInterface.getName().equalsIgnoreCase("wlan0")) {
+//                byte[] macBytes = networkInterface.getHardwareAddress();
+//                if (macBytes == null) {
+//                    return null;
+//                }
+//
+//                StringBuilder mac = new StringBuilder();
+//                for (byte b : macBytes) {
+//                    mac.append(String.format("%02X:", b));
+//                }
+//
+//                if (mac.length() > 0) {
+//                    mac.deleteCharAt(mac.length() - 1);
+//                }
+//                return mac.toString();
+//            }
+//        }
+//        return null;
+        return "02:00:00:00:00:00";
     }
 
     private static String getMacByFile() throws Exception {
-        try {
-            return PFiles.read("/sys/class/net/wlan0/address");
-        } catch (UncheckedIOException e) {
-            return null;
-        }
+//        try {
+//            return PFiles.read("/sys/class/net/wlan0/address");
+//        } catch (UncheckedIOException e) {
+//            return null;
+//        }
+        return "02:00:00:00:00:00";
     }
 
     @Override
