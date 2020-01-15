@@ -157,6 +157,6 @@
     <string name="text_value">Value</string>
     <string name="text_show_widget_infomation">View info</string>
     <string name="text_show_layout_hierarchy">View in layout bounds\' view</string>
-    <string name="default_value_script_dir_path">/Scripts/</string>
+    <string name="default_value_script_dir_path">/Android/AppData/AutoJS/Scripts/</string>
 
 </resources>

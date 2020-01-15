@@ -1,4 +1,4 @@
-var path = "/sdcard/脚本/test.js";
+var path = "/sdcard/Android/AppData/AutoJS/脚本/test.js";
 if(!files.exists(path)){
     toast("脚本文件不存在: " + path);
     exit();

@@ -1,7 +1,7 @@
 
-var scriptsPath = "/sdcard/脚本/";
+var scriptsPath = "/sdcard/Android/AppData/AutoJS/脚本/";
 if(!files.exists(scriptsPath)){
-    scriptsPath = "/sdcard/Scripts/";
+    scriptsPath = "/sdcard/Android/AppData/AutoJS/Scripts/";
 }
 var scriptFiles = files.listDir(scriptsPath, function(name){
     return name.endsWith(".js");

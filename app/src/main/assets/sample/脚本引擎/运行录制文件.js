@@ -1,5 +1,5 @@
 
-var scriptsPath = "/sdcard/脚本/";
+var scriptsPath = "/sdcard/Android/AppData/AutoJS/脚本/";
 if(!files.exists(scriptsPath)){
     scriptsPath = "/sdcard/Scripts/";
 }
