@@ -80,7 +80,7 @@ public class TimedTaskSettingActivity extends BaseActivity {
 
     public static final Map<String, Integer> ACTION_DESC_MAP = new MapBuilder<String, Integer>()
             .put(DynamicBroadcastReceivers.ACTION_STARTUP, R.string.text_run_on_startup)
-            .put(Intent.ACTION_BOOT_COMPLETED, R.string.text_run_on_boot)
+//            .put(Intent.ACTION_BOOT_COMPLETED, R.string.text_run_on_boot)
             .put(Intent.ACTION_SCREEN_OFF, R.string.text_run_on_screen_off)
             .put(Intent.ACTION_SCREEN_ON, R.string.text_run_on_screen_on)
             .put(Intent.ACTION_USER_PRESENT, R.string.text_run_on_screen_unlock)
@@ -98,7 +98,7 @@ public class TimedTaskSettingActivity extends BaseActivity {
 
     private static final BiMap<Integer, String> ACTIONS = BiMaps.<Integer, String>newBuilder()
             .put(R.id.run_on_startup, DynamicBroadcastReceivers.ACTION_STARTUP)
-            .put(R.id.run_on_boot, Intent.ACTION_BOOT_COMPLETED)
+//            .put(R.id.run_on_boot, Intent.ACTION_BOOT_COMPLETED)
             .put(R.id.run_on_screen_off, Intent.ACTION_SCREEN_OFF)
             .put(R.id.run_on_screen_on, Intent.ACTION_SCREEN_ON)
             .put(R.id.run_on_screen_unlock, Intent.ACTION_USER_PRESENT)

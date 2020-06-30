@@ -148,6 +148,7 @@ dependencies {
 //        exclude group: 'com.afollestad.material-dialogs'
 //        exclude group: 'com.android.support'
 //    })
+    implementation 'com.github.aakira:expandable-layout:1.6.0'
     //MultiLevelListView
     implementation 'com.github.hyb1996:android-multi-level-listview:1.1'
     //Licenses Dialog
